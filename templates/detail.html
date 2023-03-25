@@ -6,6 +6,9 @@
     <li class="nav-item">
         <a class="nav-link" href="{% url 'product_update' product.pk %}">Update Product</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'create_review' product.pk %}">Create Review</a>
+    </li>
 {% endblock %}
 {% block content %}
     <img src="{{ product.image }}" alt="" style="height: 400px; width: 600px;padding-top: 30px" class="img-fluid">
@@ -13,6 +16,23 @@
     <p class="category">Category: {{ product.category }}</p>
     <p class="desc">Description: {{ product.description }}</p>
     <a class="delete_prod" href="{% url 'delete_product' product.pk %}" style="margin-bottom: 10px">Delete</a>
+    <h1 class="reviews">Reviews:</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 20px; margin-bottom: 30px">
+        {% for review in reviews %}
+            <div class="card" style="width: 18rem; margin-right: 15px">
+                <div class="card-body">
+                    <h5 class="card-title">User: {{ review.author.username }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Email: {{ review.author.email }}</h6>
+                    <p class="card-text">Text: {{ review.review_text }}.</p>
+                    <p class="card-text">Rating: {{ review.rating }}</p>
+                    <a href="{% url 'review_update' product.pk %}" class="card-link">Update Review</a>
+                    <a href="#" class="card-link">Delete</a>
+                </div>
+            </div>
+        {% empty %}
+            <p>No reviews yet.</p>
+        {% endfor %}
+    </div>
 {% endblock %}
 
 

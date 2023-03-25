@@ -1,6 +1,4 @@
-from django.core.handlers.wsgi import WSGIRequest
 from django.db.models import Q
-from django.shortcuts import render
 from django.utils.http import urlencode
 from django.views.generic import ListView
 from product.forms import SearchForm

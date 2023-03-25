@@ -2,13 +2,19 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
 from product.forms import ProductForm
-from product.models import Product
+from product.models import Product, Review
 
 
 class ProductDetail(DetailView):
     template_name = 'detail.html'
     model = Product
     context_object_name = 'product'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        reviews = Review.objects.filter(product=self.object)
+        context['reviews'] = reviews
+        return context
 
 
 class ProductAddView(CreateView):
