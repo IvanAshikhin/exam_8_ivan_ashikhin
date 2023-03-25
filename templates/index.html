@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+    Index
+{% endblock %}
+{% block menu %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_product' %}">Add Product</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <form class="d-flex" role="search" method="GET">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+    </form>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 20px; margin-bottom: 30px">
+        {% for product in products %}
+            <div class="col">
+                <div class="card h-100" style="height: 170px;width: 280px;">
+                    {% if product.image %}
+                        <img src="{{ product.image }}" class="card-img-top" style="width: 270px; height: 150px"
+                             alt="...">
+                    {% else %}
+                        <img src="https://tastystore.ru/design/no-photo.png?design=THEMENAME" class="card-img-top"
+                             style="width: 270px; height: 150px" alt="...">
+                    {% endif %}
+                    <a href="{% url 'details' product.pk %}" class="btn btn-dark">See more</a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.category }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if is_paginated %}
+        {% include 'particial/pagination.html' %}
+    {% endif %}
+{% endblock %}
+

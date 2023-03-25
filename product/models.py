@@ -23,7 +23,7 @@ class Review(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Author')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Product')
     review_text = models.TextField(max_length=1000, null=False, blank=False, verbose_name='Review Text')
-    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)],verbose_name='Rating')
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)], verbose_name='Rating')
 
     def __str__(self):
         return f'{self.author} - {self.product} - {self.rating}'

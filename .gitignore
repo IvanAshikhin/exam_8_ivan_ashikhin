@@ -1,4 +1,4 @@
 .idea
 venv
-*sqlte3
+*sqlite3
 __pycache__
