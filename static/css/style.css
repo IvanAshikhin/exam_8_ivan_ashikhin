@@ -118,3 +118,13 @@ input[type="submit"] {
     background-color: white;
 }
 
+.reviews{
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.card {
+    display: inline-block;
+    width: 18rem;
+    margin: 1px;
+}
