@@ -2,7 +2,7 @@
 {% block title %}Edit{% endblock %}
 {% block content %}
     <h1 class="new_guest">Update Review</h1>
-    <form method="POST" action="{% url 'review_update' review.product.pk %}">
+    <form method="POST" action="{% url 'review_update' review.pk %}">
         {% include 'particial/add_form.html' with button_text='Save' %}
     </form>
 {% endblock %}

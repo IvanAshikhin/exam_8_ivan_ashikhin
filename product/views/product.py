@@ -1,3 +1,4 @@
+from django.db.models import Avg
 from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
@@ -14,6 +15,7 @@ class ProductDetail(DetailView):
         context = super().get_context_data(**kwargs)
         reviews = Review.objects.filter(product=self.object)
         context['reviews'] = reviews
+        context['average_rating'] = reviews.aggregate(Avg('rating')).get('rating__avg', 0) or 0
         return context
 
 

@@ -1,8 +1,8 @@
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.utils.http import urlencode
 from django.views.generic import ListView
 from product.forms import SearchForm
-from product.models import Product
+from product.models import Product, Review
 
 
 class IndexView(ListView):
@@ -37,4 +37,5 @@ class IndexView(ListView):
         context['form'] = self.form
         if self.search_value:
             context['query'] = urlencode({'search': self.search_value})
+            context['average_rating'] = Review.objects.aggregate(Avg('rating'))['rating__avg'] or 0
         return context
