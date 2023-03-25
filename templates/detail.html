@@ -26,12 +26,14 @@
         {% for review in reviews %}
             <div class="card" style="width: 18rem; margin-right: 15px">
                 <div class="card-body">
-                    <h5 class="card-title">User: {{ review.author.username }}</h5>
+                    <h5 class="card-title">User: <a class="profile_info"
+                                                    href="{% url 'profile' review.author.pk %}">{{ review.author.username }}</a>
+                    </h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">Email: {{ review.author.email }}</h6>
                     <p class="card-text">Text: {{ review.review_text }}.</p>
                     <p class="card-text">Rating: {{ review.rating }}</p>
-                    <a href="{% url 'review_update' review.pk %}" class="card-link">Update Review</a>
-                    <a href="{% url 'review_delete' review.pk %}" class="card-link">Delete</a>
+                    <a href="{% url 'review_update' review.pk %}" class="card-link profile_info">Update Review</a>
+                    <a href="{% url 'review_delete' review.pk %}" class="card-link profile_info">Delete</a>
                 </div>
             </div>
         {% empty %}

@@ -5,5 +5,5 @@
     <form class="change_bio" action="{% url 'change' user_obj.pk %}" method="post" enctype="multipart/form-data">
         {% include 'particial/add_form.html' with button_text='Save' %}
     </form>
-    <a class="btn btn-dark" href="{% url 'password_change' user_obj.pk %}">Change Password</a>
+    <a class="btn btn-dark go" href="{% url 'password_change' user_obj.pk %}">Change Password</a>
 {% endblock %}
