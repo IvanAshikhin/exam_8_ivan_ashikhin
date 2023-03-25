@@ -6,9 +6,7 @@
     <p>Name: {{ user_obj.first_name }}</p>
     <p>Second Name: {{ user_obj.last_name }}</p>
     <p>Email: {{ user_obj.email }}</p>
-    {% if request.user == user_obj %}
     <a href=" {% url 'change' user_obj.pk %}" class="btn btn-dark">Edit</a>
-    {% endif %}
     <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 20px; margin-bottom: 30px">
     {% for review in reviews %}
         <div class="card" style="width: 18rem; margin-right: 15px">

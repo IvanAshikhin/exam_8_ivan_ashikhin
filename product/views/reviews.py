@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import get_object_or_404, render, redirect
-from django.urls import reverse, reverse_lazy
+from django.urls import  reverse_lazy
 from django.views.generic import UpdateView, DeleteView
 from product.forms import ReviewForm
 from product.models import Product, Review

@@ -1,12 +1,9 @@
 from django.contrib.auth import authenticate, login, logout, get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import TemplateView, CreateView, DetailView, UpdateView
-
 from accounts.forms import LoginForm, UserChangeForm, PasswordChangeForm
-
 from accounts.forms import CustomUserCreationForm
 from product.models import Review
 
@@ -64,7 +61,7 @@ class ProfileView(LoginRequiredMixin, DetailView):
         return super().get_context_data(**kwargs)
 
 
-class UserChangeView(UserPassesTestMixin, UpdateView):
+class UserChangeView(UpdateView):
     model = get_user_model()
     form_class = UserChangeForm
     template_name = 'user_change.html'
@@ -88,16 +85,10 @@ class UserChangeView(UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         return reverse('profile', kwargs={'pk': self.object.pk})
 
-    def test_func(self):
-        return self.request.user == self.model
 
-
-class UserPasswordChangeView(UserPassesTestMixin, UpdateView):
+class UserPasswordChangeView(UpdateView):
     model = get_user_model()
     template_name = 'user_password_change.html'
     form_class = PasswordChangeForm
     context_object_name = 'user_obj'
     success_url = reverse_lazy('index_page')
-
-    def test_func(self):
-        return self.request.user == self.model

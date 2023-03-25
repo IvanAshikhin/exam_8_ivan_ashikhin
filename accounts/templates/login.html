@@ -4,13 +4,13 @@
     <form method="post">
         {% csrf_token %}
         <div>
-            <label for="{{ form.username.id_for_label }}">Логин:</label>
+            <label for="{{ form.username.id_for_label }}">Login:</label>
             {{ form.username }}
         </div>
         <div class="pass">
-            <label for="{{ form.password.id_for_label }}">Пароль:</label>
+            <label for="{{ form.password.id_for_label }}">Password:</label>
             {{ form.password }}
         </div>
-        <button class='btn btn-outline-primary' type="submit">Войти</button>
+        <button class='btn btn-outline-dark enter' type="submit">Войти</button>
     </form>
 {% endblock %}
