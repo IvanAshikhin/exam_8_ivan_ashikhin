@@ -1,0 +1,172 @@
+[
+{
+  "model": "product.product",
+  "pk": 2,
+  "fields": {
+    "name": "Lenovo IdeaPad",
+    "category": "Laptop",
+    "description": "Budget Laptop for work and films",
+    "image": "data:image/jpeg;base64,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"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 3,
+  "fields": {
+    "name": "AirPods 2",
+    "category": "Headphones",
+    "description": "Best Headphones",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxC53eMCEzzOpxOOGVrV2la-XrU4KTrOl4bA&usqp=CAU"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 4,
+  "fields": {
+    "name": "Logitec Pabble",
+    "category": "Mouses",
+    "description": "Good Mouse",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLXRqPDUid6GgdnMRM7HiA6GoOC-Iq93-z7A&usqp=CAU"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 5,
+  "fields": {
+    "name": "Keychron K2",
+    "category": "Mouses",
+    "description": "Best Keyboard for work and gaming",
+    "image": "https://m.media-amazon.com/images/I/611gRkrOX7L._AC_SY355_.jpg"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 7,
+  "fields": {
+    "name": "Apple watch",
+    "category": "Other",
+    "description": "Watch",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu-4h_tsL2k3IbHnbyxQWD6SMUdy4tfvUxa3s3Fk1868WtwQdUs7W81SsGBlA9BNenOYA&usqp=CAU"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 9,
+  "fields": {
+    "name": "Nuphy air 75",
+    "category": "Keyboards",
+    "description": "Best keyboard",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmCCBjFjVWc74Yjzz67W08j0GBll_AU4bmQ&usqp=CAU"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 10,
+  "fields": {
+    "name": "Logitec g304",
+    "category": "Mouses",
+    "description": "Wireless Mouse",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1H0PAlmIJBunOgZgqFQTxIfL1-GduRQJumg&usqp=CAU"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 11,
+  "fields": {
+    "name": "Anker",
+    "category": "Other",
+    "description": "Good speakers",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvfv1j7SPc-C4EzHehg3Q_cR8pdMcAdDVBLg&usqp=CAU"
+  }
+},
+{
+  "model": "product.review",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "product": 4,
+    "review_text": "Bad",
+    "rating": 1
+  }
+},
+{
+  "model": "product.review",
+  "pk": 8,
+  "fields": {
+    "author": 1,
+    "product": 7,
+    "review_text": "Like!",
+    "rating": 4
+  }
+},
+{
+  "model": "product.review",
+  "pk": 11,
+  "fields": {
+    "author": 1,
+    "product": 3,
+    "review_text": "I like it!",
+    "rating": 5
+  }
+},
+{
+  "model": "product.review",
+  "pk": 15,
+  "fields": {
+    "author": 1,
+    "product": 5,
+    "review_text": "Good for CS",
+    "rating": 4
+  }
+},
+{
+  "model": "product.review",
+  "pk": 16,
+  "fields": {
+    "author": 1,
+    "product": 5,
+    "review_text": "Best",
+    "rating": 5
+  }
+},
+{
+  "model": "product.review",
+  "pk": 18,
+  "fields": {
+    "author": 3,
+    "product": 3,
+    "review_text": "Norm",
+    "rating": 3
+  }
+},
+{
+  "model": "product.review",
+  "pk": 19,
+  "fields": {
+    "author": 3,
+    "product": 5,
+    "review_text": "My brother like it",
+    "rating": 5
+  }
+},
+{
+  "model": "product.review",
+  "pk": 20,
+  "fields": {
+    "author": 4,
+    "product": 4,
+    "review_text": "I love it!!!",
+    "rating": 5
+  }
+},
+{
+  "model": "product.review",
+  "pk": 21,
+  "fields": {
+    "author": 4,
+    "product": 9,
+    "review_text": "Best for gaming",
+    "rating": 5
+  }
+}
+]

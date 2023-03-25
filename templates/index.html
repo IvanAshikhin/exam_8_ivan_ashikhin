@@ -4,7 +4,9 @@
 {% endblock %}
 {% block menu %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'add_product' %}">Add Product</a>
+        {% if perms.product.add_product %}
+            <a class="nav-link" href="{% url 'add_product' %}">Add Product</a>
+        {% endif %}
     </li>
 {% endblock %}
 {% block content %}

@@ -4,7 +4,9 @@
 {% endblock %}
 {% block menu %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'product_update' product.pk %}">Update Product</a>
+        {% if perms.product.delete_product %}
+            <a class="nav-link" href="{% url 'product_update' product.pk %}">Update Product</a>
+        {% endif %}
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{% url 'create_review' product.pk %}">Create Review</a>
@@ -20,7 +22,9 @@
     {% else %}
         <p>No ratings yet.</p>
     {% endif %}
-    <a class="delete_prod" href="{% url 'delete_product' product.pk %}" style="margin-bottom: 10px">Delete</a>
+    {% if perms.product.delete_product %}
+        <a class="delete_prod" href="{% url 'delete_product' product.pk %}" style="margin-bottom: 10px">Delete</a>
+    {% endif %}
     <h1 class="reviews">Reviews:</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 20px; margin-bottom: 30px">
         {% for review in reviews %}
@@ -32,8 +36,12 @@
                     <h6 class="card-subtitle mb-2 text-body-secondary">Email: {{ review.author.email }}</h6>
                     <p class="card-text">Text: {{ review.review_text }}.</p>
                     <p class="card-text">Rating: {{ review.rating }}</p>
-                    <a href="{% url 'review_update' review.pk %}" class="card-link profile_info">Update Review</a>
-                    <a href="{% url 'review_delete' review.pk %}" class="card-link profile_info">Delete</a>
+                    {% if perms.review.update_product or request.user == review.author  %}
+                        <a href="{% url 'review_update' review.pk %}" class="card-link profile_info">Update Review</a>
+                    {% endif %}
+                    {% if perms.review.delete_product or request.user == review.author %}
+                        <a href="{% url 'review_delete' review.pk %}" class="card-link profile_info">Delete</a>
+                    {% endif %}
                 </div>
             </div>
         {% empty %}
