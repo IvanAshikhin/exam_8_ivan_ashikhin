@@ -132,3 +132,11 @@ input[type="submit"] {
 .nav-link{
     color: white;
 }
+
+.enter_icon{
+    height: 30px;
+    width: 30px;
+    margin-left: 50px;
+
+}
+

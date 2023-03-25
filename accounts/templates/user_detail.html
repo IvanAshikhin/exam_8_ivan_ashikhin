@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}User:{% endblock %}
+{% block content %}
+    <h1>User Page: {{ user_obj.get_full_name|default:user_obj.username }}</h1>
+    <p>Login: {{ user_obj.username }}</p>
+    <p>Name: {{ user_obj.first_name }}</p>
+    <p>Second Name: {{ user_obj.last_name }}</p>
+    <p>Email: {{ user_obj.email }}</p>
+    <a href=" {% url 'change' user_obj.pk %}" class="btn btn-dark">Edit</a>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 20px; margin-bottom: 30px">
+    {% for review in reviews %}
+        <div class="card" style="width: 18rem; margin-right: 15px">
+            <div class="card-body">
+                <h5 class="card-title">User: {{ review.author.username }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Email: {{ review.author.email }}</h6>
+                <p class="card-text">Text: {{ review.review_text }}.</p>
+                <p class="card-text">Rating: {{ review.rating }}</p>
+            </div>
+        </div>
+    {% endfor %}
+     </div>
+{% endblock %}
